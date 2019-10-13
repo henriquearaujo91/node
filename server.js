@@ -11,8 +11,10 @@ app.use(express.json());
 const uri = "mongodb://192.168.0.102:27017/nodeapi";
 const options = {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 };
+mongoose.set('useFindAndModify', false);
 mongoose.connect(uri, options);
 requireDir("./src/models");
 
