@@ -4,6 +4,8 @@ const requireDir = require("require-dir");
 
 // Iniciando o app
 const app = express();
+// Permitir envio do formato json para a aplicação
+app.use(express.json());
 
 // Iniciando o DB
 const uri = "mongodb://192.168.0.102:27017/nodeapi";
