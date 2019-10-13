@@ -11,21 +11,11 @@ const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true
 };
-
 mongoose.connect(uri, options);
-
 requireDir("./src/models");
 
-const Product = mongoose.model('Product');
 
-// Primeira rota
-app.get("/", (req, res) => {
-    Product.create({
-        title: 'Google',
-        description: 'Buscador',
-        url: 'https://www.google.com/',
-    }); 
-    return res.send("Chamada a api");
-});
+// rotas
+app.use("/api", require("./src/routes"));
 
 app.listen(3001);
