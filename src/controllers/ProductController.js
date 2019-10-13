@@ -23,5 +23,10 @@ module.exports = {
             useFindAndModify: false
         });
         return res.json(products);
+    },
+
+    async destroy(req, res) {
+        await Product.findByIdAndRemove(req.params.id);
+        return res.send();
     }
 };
