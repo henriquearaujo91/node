@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 // Iniciando o DB
-const uri = "mongodb://192.168.0.102:27017/nodeapi";
+const uri = "mongodb://192.168.1.6:27017/nodeapi";
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
